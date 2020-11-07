@@ -2,9 +2,12 @@
 using System.Runtime.InteropServices;
 using System.Timers;
 using System.Windows;
+using System.Windows.Input;
 using System.Windows.Interop;
 using AutoClicker.Enums;
 using AutoClicker.Utils;
+using MouseAction = AutoClicker.Enums.MouseAction;
+using MouseButton = AutoClicker.Enums.MouseButton;
 using MouseCursor = System.Windows.Forms.Cursor;
 using Point = System.Drawing.Point;
 
@@ -157,6 +160,7 @@ namespace AutoClicker.Views
 
             RegisterHotKey(_windowHandle, Constants.HOTKEY_ID, Constants.MOD_NONE, Constants.F6_KEY);
             RegisterHotKey(_windowHandle, Constants.HOTKEY_ID, Constants.MOD_NONE, Constants.F7_KEY);
+            RegisterHotKey(_windowHandle, Constants.HOTKEY_ID, Constants.MOD_NONE, Constants.F8_KEY);
         }
 
         protected override void OnClosed(EventArgs e)
@@ -337,6 +341,13 @@ namespace AutoClicker.Views
                 if (vkey == Constants.F7_KEY && clickTimer.Enabled)
                 {
                     StopCommand_Execute(null, null);
+                }
+                if (vkey == Constants.F8_KEY)
+                {
+                    while (Keyboard.IsKeyDown(Key.F8))
+                    {
+                        InitMouseClick();
+                    }
                 }
                 handled = true;
             }

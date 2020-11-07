@@ -19,5 +19,6 @@
         public const uint MOD_NONE = 0x0000;
         public const uint F6_KEY = 0x75;
         public const uint F7_KEY = 0x76;
+        public const uint F8_KEY = 0x77;
     }
 }
