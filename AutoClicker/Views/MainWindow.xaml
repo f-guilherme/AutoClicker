@@ -175,5 +175,6 @@
                         Content="Hotkey Settings" Command="commands:MainWindowCommands.HotkeySettings"/>
             </UniformGrid>
         </Grid>
+        <CheckBox x:Name="TopMostCheckBox" Content="Top most" HorizontalAlignment="Left" Margin="12,238.4,0,0" Grid.Row="1" VerticalAlignment="Top" Checked="TopMostCheckBox_Checked" Unchecked="TopMostCheckBox_Unchecked"/>
     </Grid>
 </Window>

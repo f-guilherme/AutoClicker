@@ -479,5 +479,15 @@ namespace AutoClicker.Views
         }
 
         #endregion Event Handlers
+
+        private void TopMostCheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            Topmost = true;
+        }
+
+        private void TopMostCheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            Topmost = false;
+        }
     }
 }
